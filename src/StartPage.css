@@ -1,0 +1,27 @@
+.StartPage {
+  background-color: black;
+  width: 1366px;
+  height: 768px;
+}
+
+.todo-logo {
+  margin-top: 74px;
+}
+
+h1 {
+  margin-top: 46px;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.btn-started {
+  width: 271px;
+  height: 67px;
+  background: #5efc8d;
+  color: #000;
+  text-align: center;
+  margin-top: 149px;
+  font-family: "Poppins";
+  font-size: 28px;
+}
