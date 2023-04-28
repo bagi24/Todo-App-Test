@@ -1,0 +1,58 @@
+.register-content {
+  background: #000;
+  width: 1366px;
+  height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 588px;
+  height: 688px;
+  background: #fff;
+}
+
+h2 {
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-size: 48px;
+}
+
+.input-name {
+  outline: none;
+
+  width: 487px;
+  height: 76px;
+  font-size: 22px;
+  opacity: 0.2;
+}
+
+.input-labelName {
+  font-family: "Poppins";
+  font-size: 22px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: lowercase;
+}
+
+.btn-signin {
+  width: 258px;
+  height: 66px;
+
+  background: #5efc8d;
+  color: #000;
+  font-size: 32px;
+  font-family: "Poppins";
+}
+
+.input-labelPhoto {
+  font-size: 22px;
+  font-family: "Poppins";
+}

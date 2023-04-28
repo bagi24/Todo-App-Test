@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import SingInPage from "./pages/SingInPage";
+import SignInPage from "./pages/SignInPage";
 import StartPage from "./pages/StartPage";
 import { Routes, Route } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="singin" element={<SingInPage />} />
+        <Route path="singin" element={<SignInPage />} />
       </Routes>
     </div>
   );
