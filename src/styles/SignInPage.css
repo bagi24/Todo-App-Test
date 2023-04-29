@@ -10,7 +10,7 @@
 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+
   align-items: center;
   width: 588px;
   height: 688px;
@@ -23,6 +23,7 @@ h2 {
   text-transform: capitalize;
   font-family: "Poppins";
   font-size: 48px;
+  margin-top: 33px;
 }
 
 .input-name {
@@ -31,8 +32,20 @@ h2 {
   width: 487px;
   height: 76px;
   font-size: 22px;
-  opacity: 0.2;
+  background-color:#E6EBFF;
+  margin-top: 16px;
+  border-style: none;
 }
+
+
+
+.input-name::placeholder {
+
+  opacity: 0.2;
+  color: #000000;
+  padding: 24px 23px 22px;
+}
+
 
 .input-labelName {
   font-family: "Poppins";
@@ -40,6 +53,7 @@ h2 {
   letter-spacing: 0px;
   color: #000000;
   text-transform: lowercase;
+  margin-top: 53px;
 }
 
 .btn-signin {
@@ -50,9 +64,35 @@ h2 {
   color: #000;
   font-size: 32px;
   font-family: "Poppins";
+  margin-top: 76px;
+  cursor: pointer;
+  border-style: none;
 }
 
 .input-labelPhoto {
-  font-size: 22px;
+  position: relative;
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  background: #e6ebff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.input-file {
+  visibility: hidden;
+  display: none;
+}
+
+.uploadphoto {
+  display: flex;
+  position: absolute;
+  right: 40px;
+  top: 35px;
+}
+
+p {
   font-family: "Poppins";
+  font-size: 22px;
+  margin-top: 44px;
 }
