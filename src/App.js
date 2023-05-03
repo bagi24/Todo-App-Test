@@ -1,17 +1,19 @@
 import "./styles/App.css";
 import SignInPage from "./pages/SignInPage";
 import StartPage from "./pages/StartPage";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TodoListPage from "./pages/TodoListPage";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="singin" element={<SignInPage />} />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/singin" element={<SignInPage />} />
+          <Route path="/todo-list" element={<TodoListPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
-
-export default App;
