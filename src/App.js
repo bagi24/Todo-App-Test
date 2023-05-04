@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import SignInPage from "./pages/SignInPage";
 import StartPage from "./pages/StartPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import TodoListPage from "./pages/TodoListPage";
 import { useState } from "react";
 
