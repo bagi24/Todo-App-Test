@@ -106,6 +106,7 @@ h6 {
   margin-right: 29.29px;
   width: 24.71px;
   height: 17.84px;
+  cursor: pointer;
 }
 
 .btn-delete {
@@ -114,4 +115,5 @@ h6 {
   margin-right: 11.7px;
   width: 24.3px;
   height: 27.33px;
+  cursor: pointer;
 }
