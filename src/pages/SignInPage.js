@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/SignInPage.css";
 import UploadPhoto from "../images/upload2.svg";
 import { useNavigate } from "react-router-dom";

@@ -12,7 +12,10 @@ export default function StartPage() {
       console.log("ehllo");
       navigate("/todo-list");
     }
+
+    // eslint-disable-next-line
   }, []);
+
 
   if(localStorage.getItem("todos")) return
 

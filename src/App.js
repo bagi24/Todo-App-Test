@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import SignInPage from "./pages/SignInPage";
 import StartPage from "./pages/StartPage";
-import { Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TodoListPage from "./pages/TodoListPage";
 import { useState } from "react";
 
@@ -42,7 +42,14 @@ export default function App() {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+if(updatedTodos.length === 0) {
+  localStorage.removeItem('todos')
+}
+
   };
+
+
 
   const handleAdd = (e) => {
     e.preventDefault();
