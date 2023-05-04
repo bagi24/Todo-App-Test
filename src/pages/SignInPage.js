@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/SignInPage.css";
 import UploadPhoto from "../images/upload2.svg";
 import { useNavigate } from "react-router-dom";
+import TextInput from "../components/inputs/TextInput";
 
 export default function SignInPage({
   file,
@@ -15,7 +16,8 @@ export default function SignInPage({
 
   return (
     <section className="register-content">
-      <form className="form"
+      <form
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -42,23 +44,22 @@ export default function SignInPage({
           name="photo"
           onChange={handleFile}
         />
-
         {file && <div className="photo-name">{file.name}</div>}
-
         <label className="input-labelName" htmlFor="name">
           fill in you name
         </label>
-        <input
-          className="input-name"
-          type="text"
+        <TextInput
           id="name"
           name="name"
           placeholder="your name"
           autoComplete="off"
           value={name}
           onChange={handleName}
+          width="487px"
         />
+        <div style={{height: 28, display: "flex", alignItems: "flex-end"}}>
         {isValid ? <div className="valid-text">Fill all fields</div> : null}
+        </div>
 
         <button className="btn-signin" type="submit">
           Sign In

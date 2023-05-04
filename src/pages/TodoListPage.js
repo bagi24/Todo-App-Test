@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import "../styles/TodoListPage.css";
 import checkIcon from "../images/checkIcon.svg";
 import deleteIcon from "../images/deleteIcon.svg";
+import TextInput from "../components/inputs/TextInput";
 
 export default function TodoListPage({
   name,
@@ -18,25 +19,29 @@ export default function TodoListPage({
     <>
       <Header name={name} file={file} />
       <div className="todos">
-
         <h6>Add Your Daily Tasks</h6>
-        <form  style={{ marginBottom: 0, marginTop: 27  }  } onSubmit={(e) => handleAdd(e)}>
-
+        <form
+          style={{ marginBottom: 0, marginTop: 27 }}
+          onSubmit={(e) => handleAdd(e)}
+        >
           <div className="inputForm">
-          <input
-            className="input-todo"
-            value={taskValue}
-            onChange={(e) => setTaskValue(e.target.value)}
-            type="text"
-            placeholder="my task"
-          />
-          <button className="btn-addTodo" type="submit">Add</button>
+            <TextInput
+              value={taskValue}
+              onChange={(e) => setTaskValue(e.target.value)}
+              type="text"
+              placeholder="my task"
+              width="487px"
+            />
+            <button className="btn-addTodo" type="submit">
+              Add
+            </button>
           </div>
         </form>
         <ul className="todos-ul" style={{ marginTop: 40 }}>
           {todos.map((todo) => {
             return (
-              <li className="todos-li"
+              <li
+                className="todos-li"
                 key={todo.id}
                 style={{
                   background: todo.completed ? "green" : "black",
@@ -45,12 +50,18 @@ export default function TodoListPage({
               >
                 {todo.title}
                 <div className="buttons">
-                <button className="btn-check" onClick={() => handleCheck(todo.id)}>
-                  <img src={checkIcon} alt="img"></img>
-                </button>
-                <button className="btn-delete" onClick={() => handleDelete(todo.id)}>
-                  <img src={deleteIcon} alt="img"></img>
-                </button>
+                  <button
+                    className="btn-check"
+                    onClick={() => handleCheck(todo.id)}
+                  >
+                    <img src={checkIcon} alt="img"></img>
+                  </button>
+                  <button
+                    className="btn-delete"
+                    onClick={() => handleDelete(todo.id)}
+                  >
+                    <img src={deleteIcon} alt="img"></img>
+                  </button>
                 </div>
               </li>
             );
