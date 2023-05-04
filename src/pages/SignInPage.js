@@ -15,7 +15,7 @@ export default function SignInPage({
 
   return (
     <section className="register-content">
-      <form
+      <form className="form"
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -43,7 +43,7 @@ export default function SignInPage({
           onChange={handleFile}
         />
 
-        {file && <div>{file.name}</div>}
+        {file && <div className="photo-name">{file.name}</div>}
 
         <label className="input-labelName" htmlFor="name">
           fill in you name
@@ -58,7 +58,7 @@ export default function SignInPage({
           value={name}
           onChange={handleName}
         />
-        {isValid ? <div>Fill all fields</div> : null}
+        {isValid ? <div className="valid-text">Fill all fields</div> : null}
 
         <button className="btn-signin" type="submit">
           Sign In

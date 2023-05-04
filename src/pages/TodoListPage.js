@@ -18,18 +18,25 @@ export default function TodoListPage({
     <>
       <Header name={name} file={file} />
       <div className="todos">
-        <form style={{ marginBottom: 0 }} onSubmit={(e) => handleAdd(e)}>
+
+        <h6>Add Your Daily Tasks</h6>
+        <form  style={{ marginBottom: 0, marginTop: 27  }  } onSubmit={(e) => handleAdd(e)}>
+
+          <div className="inputForm">
           <input
+            className="input-todo"
             value={taskValue}
             onChange={(e) => setTaskValue(e.target.value)}
             type="text"
+            placeholder="my task"
           />
-          <button type="submit">Add</button>
+          <button className="btn-addTodo" type="submit">Add</button>
+          </div>
         </form>
-        <ul style={{ marginTop: 40 }}>
+        <ul className="todos-ul" style={{ marginTop: 40 }}>
           {todos.map((todo) => {
             return (
-              <li
+              <li className="todos-li"
                 key={todo.id}
                 style={{
                   background: todo.completed ? "green" : "black",
@@ -37,12 +44,14 @@ export default function TodoListPage({
                 }}
               >
                 {todo.title}
-                <button onClick={() => handleCheck(todo.id)}>
+                <div className="buttons">
+                <button className="btn-check" onClick={() => handleCheck(todo.id)}>
                   <img src={checkIcon} alt="img"></img>
                 </button>
-                <button onClick={() => handleDelete(todo.id)}>
+                <button className="btn-delete" onClick={() => handleDelete(todo.id)}>
                   <img src={deleteIcon} alt="img"></img>
                 </button>
+                </div>
               </li>
             );
           })}

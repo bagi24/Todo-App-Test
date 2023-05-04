@@ -7,13 +7,12 @@
   align-items: center;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  /* width: 588px;
-  height: 688px; */
+  width: 588px;
+  height: 688px;
   background: #fff;
 }
 
@@ -28,24 +27,20 @@ h2 {
 
 .input-name {
   outline: none;
-
   width: 487px;
   height: 76px;
   font-size: 22px;
-  background-color:#E6EBFF;
+  background-color: #e6ebff;
   margin-top: 16px;
   border-style: none;
+  padding: 22px 24px;
 }
-
-
 
 .input-name::placeholder {
-
   opacity: 0.2;
   color: #000000;
-  padding: 24px 23px 22px;
-}
 
+}
 
 .input-labelName {
   font-family: "Poppins";
@@ -95,4 +90,15 @@ p {
   font-family: "Poppins";
   font-size: 22px;
   margin-top: 44px;
+}
+
+.valid-text {
+  color: red;
+  
+}
+
+.photo-name {
+
+  color: green;
+ 
 }
