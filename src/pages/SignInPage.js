@@ -3,27 +3,17 @@ import "../styles/SignInPage.css";
 import UploadPhoto from "../images/upload2.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function SignInPage() {
-  const [file, setFile] = useState(null);
-  const [name, setName] = useState("");
-  const [isValid, setIsValid] = useState(false);
+export default function SignInPage({file, name, isValid, setIsValid, handleFile, handleName}) {
+  
   const navigate = useNavigate();
 
-  const handleName = (e) => {
-    console.log(e.target.value);
-    setName(e.target.value);
-  };
-
-  const handleFile = (e) => {
-    const file = e.target.files[0];
-    setFile(file);
-  };
+ 
 
   return (
     <section className="register-content">
       <form
         onSubmit={(e) => {
-          e.preventDefault(); // prevent form submission
+          e.preventDefault(); 
 
           if (file === null || name.length === 0) {
             setIsValid(true);

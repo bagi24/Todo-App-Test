@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  height: 98px;
+}
+
+h5 {
+  font-size: 36px;
+  color: white;
+  margin-left: 28px;
+}
+
+.nameInfo {
+  color: white;
+  font-size: 22px;
+  font-family: "Poppins";
+  letter-spacing: 0px;
+ margin-right: 20px;
+  text-transform: capitalize;
+}
+
+.personInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePic {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  margin-right: 28px;
+}

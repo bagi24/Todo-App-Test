@@ -1,7 +1,23 @@
-import React from 'react'
+import React from "react";
+import "../styles/TodoListPage.css";
 
-export default function TodoListPage() {
+export default function TodoListPage({ name, file }) {
   return (
-    <h3>TodoListPage</h3>
-  )
+    <header>
+      <h5>TO DO</h5>
+      <div className="personInfo">
+        <div className="nameInfo"> {name} </div>
+        <div >
+          <img className="profilePic" src={URL.createObjectURL(file)} alt="profile photo" />
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
+
+  );
 }
