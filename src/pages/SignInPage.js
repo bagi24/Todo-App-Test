@@ -3,23 +3,29 @@ import "../styles/SignInPage.css";
 import UploadPhoto from "../images/upload2.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function SignInPage({file, name, isValid, setIsValid, handleFile, handleName}) {
-  
+export default function SignInPage({
+  file,
+  name,
+  isValid,
+  setIsValid,
+  handleFile,
+  handleName,
+}) {
   const navigate = useNavigate();
-
- 
 
   return (
     <section className="register-content">
       <form
         onSubmit={(e) => {
-          e.preventDefault(); 
+          e.preventDefault();
 
           if (file === null || name.length === 0) {
             setIsValid(true);
           } else {
             setIsValid(false);
             navigate("/todo-list");
+            localStorage.setItem("file", JSON.stringify(file));
+            localStorage.setItem("name", name);
           }
         }}
       >

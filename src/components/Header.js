@@ -8,11 +8,7 @@ export default function Header({ name, file }) {
         <div className="nameInfo"> {name ?? ""} </div>
         <div>
           {file && (
-            <img
-              className="profilePic"
-              src={URL.createObjectURL(file)}
-              alt="profile photo"
-            />
+            <img className="profilePic" src={file.link} alt="profile photo" />
           )}
         </div>
       </div>

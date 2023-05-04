@@ -28,7 +28,6 @@ export default function TodoListPage({
         </form>
         <ul style={{ marginTop: 40 }}>
           {todos.map((todo) => {
-            console.log(todo.completed);
             return (
               <li
                 key={todo.id}

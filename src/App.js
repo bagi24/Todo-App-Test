@@ -6,13 +6,15 @@ import TodoListPage from "./pages/TodoListPage";
 import { useState } from "react";
 
 export default function App() {
-  const [file, setFile] = useState(null);
-  const [name, setName] = useState("");
+  const [file, setFile] = useState(
+    JSON.parse(localStorage.getItem("file")) ?? null
+  );
+  const [name, setName] = useState(localStorage.getItem("name") ?? "");
   const [isValid, setIsValid] = useState(false);
   const [taskValue, setTaskValue] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  console.log(taskValue);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) ?? []
+  );
 
   const handleName = (e) => {
     console.log(e.target.value);
@@ -21,7 +23,8 @@ export default function App() {
 
   const handleFile = (e) => {
     const file = e.target.files[0];
-    setFile(file);
+
+    setFile({ name: file.name, link: URL.createObjectURL(file) });
   };
 
   const handleCheck = (id) => {
@@ -31,27 +34,33 @@ export default function App() {
       }
       return todo;
     });
-
     setTodos(updatedTodos);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   const handleDelete = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   const handleAdd = (e) => {
     e.preventDefault();
     setTaskValue("");
     if (taskValue.length === 0) return;
-    setTodos((prev) => [
-      ...prev,
-      {
-        id: Math.floor(Math.random() * 100),
-        title: taskValue,
-        completed: false,
-      },
-    ]);
+    setTodos((prev) => {
+      const updatedValue = [
+        ...prev,
+        {
+          id: Math.floor(Math.random() * 100),
+          title: taskValue,
+          completed: false,
+        },
+      ];
+      localStorage.setItem("todos", JSON.stringify(updatedValue));
+
+      return updatedValue;
+    });
   };
 
   return (
